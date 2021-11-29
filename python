@@ -1,0 +1,192 @@
+'''
+* Naam: Abdel Fenich
+* Klas: ID1G3
+* Naam Leraar: Ramesh
+* Vak: Programmeren in python
+* Opdracht: Eindopdracht
+'''
+
+# Lege lijst die ingevuld moet worden:
+informatie =[]
+
+#n wordt gebruikt om het aantal gegevens dat de lijst krijgt, in dit geval zijn het er 3
+n=3
+print("voer je naam in:")
+# vul steeds een waarde in totdat er 3 zijn ingevuld.
+for i in range(0, n):
+    element = str(input())
+    if (i==0):
+        print("Voer je leeftijd in")
+    elif(i==1):
+        print("Voer je studiejaar in:")
+    informatie.append(element)  # element toevoegen
+
+
+Naam = informatie[0]
+Naam = Naam.title()
+
+print("""Hallo {}, Welkom bij deze Python programma! 
+    Maak een keuze uit de volgende lijst:
+    1.Spelletje spelen.
+    2.Rekenen.  
+    """.format(Naam))
+
+keuze = input("")
+
+def Spel():
+    score = 0
+    score = int(score)
+
+    print("""Hallo {}, Welkom bij deze vragenlijst! 
+    Je zult 5 multichoisevragen krijgen die je moet beantwoorden  
+    Succes!""".format(Naam))
+
+    # Vraag 1
+    print("""Met welke programmeertaal is deze code geschreven?
+    1. C++  
+    2. SQL 
+    3. Python
+    4. Java""")
+
+    Antwoord1 = "3"
+    Keuze1 = input("Jouw antwoord is: ")
+
+    if (Keuze1 != Antwoord1):
+        print("Sorry, dat is niet het juiste antwoord!")
+    else:
+        print("Goed gedaan! " + Keuze1 + " dat is de juiste antwoord!")
+        score = score + 1
+
+    print("Jouw score is nu " + str(score) + " van de 5")
+
+    # Vraag2
+    print("""Wat is de snelheid van licht??
+    1. 200km/s 
+    2. 20.000km/s
+    3. 300.000km/s 
+    4. 6000km/s""")
+
+    Antwoord2 = "3"
+    Keuze2 = input("Jouw antwoord is: ")
+
+    if (Keuze2 != Antwoord2):
+        print("Sorry dat is niet het juiste antwoord!")
+    else:
+        print("Goed gedaan! " + Keuze2 + " Dat is het juiste antwoord!")
+        score = score + 1
+
+    print("Je huidige score is " + str(score) + " van de 5")
+
+    # Vraag3
+    print("""Hoeveel procent zuurstof zit er in lucht?
+    1. 5%
+    2. 9%
+    3. 19%
+    4. 21%""")
+
+    Antwoord3 = "4"
+    Keuze3 = input("Jouw antwoord is: ")
+
+    if (Keuze3 != Antwoord3):
+        print("Sorry, dat is niet het juiste antwoord!")
+    else:
+        print("Goed gedaan, ga zo door! " + Keuze3 + "Is het juiste antwoord!")
+        score = score + 1
+
+    print("Je huidige score is" + str(score) + " van de 5")
+
+    # Vraag 4
+    print("""Waarmee kun je het snelst reizen?
+    1. Vliegtuig
+    2. Trein
+    3. Bus
+    4. Boot""")
+
+    Antwoord4 = "1"
+    Keuze4 = input("Jouw antwoord isA:")
+
+    if (Keuze4 != Antwoord4):
+        print("Sorry, dat is niet het juiste antwoord!")
+    else:
+        print("Goed gedaan! " + Keuze4 + " dat is het juiste antwoord!")
+        score = score + 1
+
+    print("Jouw huidige score is" + str(score) + " van de 5")
+
+    # Vraag 5
+    print("""Is Beatrix de koningin van nederland?
+    1. Ja
+    2. Nee""")
+
+    Antwoord5 = "2"
+    Keuze5 = input("Jouw antwoord is:")
+
+    if (Keuze5 != Antwoord5):
+        print("Sorry, je antwoord is niet goed!")
+    else:
+        print("Goed gedaan! " + Keuze5 + "is het juiste antwoord!")
+        score = score + 1
+    print("Jouw totale score is " + str(score) + " van de 5")
+    print("Bedankt voor het spelen {}, tot de volgende keer!".format(Naam))
+    informatie.append(score)
+    print(informatie)
+
+def rekenen():
+
+    def vermenigvuldigen(getal1, getal2):
+        return getal1 * getal2
+
+    def optellen(getal1, getal2):
+        return getal1 + getal2
+
+    def Macht(getal1, getal2):
+        return getal1 ** getal2
+
+    def delen(getal1, getal2):
+        return getal1 / getal2
+    def Wortel(getal1):
+        return math.sqrt(float(getal1))
+    def Wortel2(getal2):
+        return math.sqrt(float(getal2))
+
+
+    Keuze1 = int(input("Typ je eerste getal in: "))
+    Keuze2 = int(input("Typ je tweede getal in: "))
+
+    print("Maak een keuze wat je met deze twee getallen wilt doen"
+          "\n1: delen "
+          "\n2: vermenigvuldigen"
+          "\n3: optellen"
+          "\n4: Macht"
+          "\n5  Wortel")
+    Berekening = int(input(""))
+
+    if Berekening == 1:
+        print(Keuze1, "/", Keuze2, "=", delen(Keuze1, Keuze2))
+
+    elif Berekening == 2:
+        print(Keuze1, "*", Keuze2, "=", vermenigvuldigen(Keuze1, Keuze2))
+
+    elif Berekening == 3:
+        print(Keuze1, "+", Keuze2, "=", optellen(Keuze1, Keuze2))
+    elif Berekening == 4:
+        print(Keuze1, "^", Keuze2, "=", Macht(Keuze1, Keuze2))
+    elif Berekening == 5:
+        print("De wortel van",Keuze1,"=" ,Wortel(Keuze1))
+        print("De wortel van",Keuze2,"=",Wortel2(Keuze2))
+
+    else:
+        print("")
+if (keuze == str(1)):
+    print("We gaan een spelletje spelen!")
+    Spel()
+
+elif (keuze == str(2)):
+    print("Laten we gaan rekenen!")
+    import math
+    rekenen()
+else:
+    print("ongeldige keuze!")
+
+
+
